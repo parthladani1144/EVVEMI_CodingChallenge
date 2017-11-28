@@ -23,10 +23,6 @@ import javax.servlet.http.HttpServletResponse;
  * @author ParthLadani
  */
 public class deleteServlet extends HttpServlet {
-
-   
-
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -59,7 +55,4 @@ public class deleteServlet extends HttpServlet {
             Logger.getLogger(insertServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-
-
 }
