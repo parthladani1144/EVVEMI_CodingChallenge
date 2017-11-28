@@ -37,18 +37,6 @@ public class deleteServlet extends HttpServlet {
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/school", "root", "root");
             java.sql.Statement st=con.createStatement();
             String id=request.getParameter("id");
-            
-            
-            
-            //String s11 = "delete from student, course USING student INNER JOIN course ON student.id = course.id where student.id='"+id+"'";
-            /*ResultSet resultSet = st.executeQuery(s1);
-            if (!resultSet.next() ) {
-                out.println("Data not present in Database");
-            } 
-            else {
-                out.println("Deleted Successfully!");
-            }
-            */
             String s = "select * from student where id='"+id+"'";
             ResultSet rs = st.executeQuery(s);
             if(!rs.next())
@@ -63,11 +51,8 @@ public class deleteServlet extends HttpServlet {
                 st.executeUpdate(s2);
                 out.println("Deleted Successfully!");
             }
-            
             RequestDispatcher rd=request.getRequestDispatcher("index.html");
               rd.include(request, response);
-
-            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(insertServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
